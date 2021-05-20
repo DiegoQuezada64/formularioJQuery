@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Contacto ONG</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <!-- <script src="/validarRut.js"></script> -->
+
+    <script src="validarrut.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+    <script>
+        $(document).ready(function() {
+
+            /* $("#basic-form").validate(); */
+
+            $("#rut2").hide();
+            $("#pasaporte").hide();
+
+            $("#radioRut").click(function() {
+                $("#pasaporte").hide();
+                $("#rut2").show();
+            });
+
+            $("#radioPasaporte").click(function() {
+                $("#rut2").hide();
+                $("#pasaporte").show();
+            });
+
+            $("#btnLimpiar").click(function() {
+                $("#rut2").hide();
+                $("#pasaporte").hide();
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <form action="#" name="registration">
+            <div align="center"><img src="img/onglogo.jpg"  width="200" height="200"></div>
+          <label for="firstname">Nombre</label>
+          <input type="text" name="Nombre" id="Nombre" required>
+      
+          <label for="lastname">Apellidos</label>
+          <input type="text" name="apellido" id="apellido" required>
+      
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+
+          <label for="radio"></label>
+          <input type="radio" name="color" value="rut" id="radioRut" required> Rut <br></br>
+          <input type="radio" name="color" value="pasaporte" id="radioPasaporte" required> Pasaporte
+
+          <label for="rut">Ingrese su numero de documento</label>
+          <input type="text" name="rut" id="rut" required checkRut(rut)>
+
+          <label for="telefono">Telefono(+56)</label>
+          <input type="text" name="telefono" id="telefono">
+
+          <label for="ciudad">Ciudad de residencia</label>
+          <input type="text" name="ciudad" id="ciudad" required>
+
+          <label for="comentario">Comentario</label>
+          <textarea name="comentarios" rows="10" cols="40" required></textarea>
+
+          <button type="submit">Registrarme</button>
+          <button type="reset">Limpiar</button>
+        </form>
+      </div>
+      <script src="vendor/jquery/dist/jquery.min.js"></script>
+</body>
+</html>
